@@ -43,6 +43,10 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
+      name: pwd
+      run: ls $PWD
+    
+    -
       name: Build and push
       run: kubectl apply -f k8s.yml
       
