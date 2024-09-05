@@ -1,12 +1,12 @@
 FROM node:latest
 
-RUN mkdir app
+#RUN mkdir app
 
-COPY . app/
+#COPY . app/
 
-WORKDIR app/
+#WORKDIR app/
 
-#RUN npm install cross-env
+RUN npm install cross-env
 
 #RUN npm install 
 
