@@ -1,8 +1,9 @@
-name: Push into main branch
+  
+name: Push into dev branch
   
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
 
 jobs:
   docker-build-push:
@@ -26,4 +27,4 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: sharefm/react-redux-realworld-example-app:latest
+        tags: sharefm/dev-react-redux:latest

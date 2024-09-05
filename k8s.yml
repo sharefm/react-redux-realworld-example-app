@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-react-redux
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dev-react-redux
+  name: dev-react-redux
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: dev-react-redux
+  replicas: 20
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: dev-react-redux
+    spec:
+      containers:
+      - image: docker.io/sharefm/dev-react-redux:latest
+        imagePullPolicy: Always
+        name: dev-react-redux
+        ports:
+        - containerPort: 4100
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: dev-react-redux
+  name: dev-react-redux
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: dev-react-redux
+  
