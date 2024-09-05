@@ -59,6 +59,10 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
+    - 
+      name: checkout      
+      uses: actions/checkout@v4
+    
     -
       name: Build and push
       run: kubectl apply -f /app/k8s.yml
