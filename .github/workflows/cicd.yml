@@ -52,14 +52,8 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    -
-      name: ls
-      run: ls -lat ../../../
-    -
-      name: ls 2
-      run: ls -lat /home/runner/
     
     -
       name: Build and push
-      run: kubectl apply -f k8s.yml
+      run: kubectl apply -f /app/k8s.yml
       
