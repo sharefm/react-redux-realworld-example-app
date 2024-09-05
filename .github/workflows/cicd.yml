@@ -44,12 +44,12 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
       name: ls
-      run: ls -lat
+      run: ls -lat ../
     -
       name: pwd
       run: echo $PWD
     
     -
       name: Build and push
-      run: kubectl apply -f k8s.yml
+      run: kubectl apply -f ../k8s.yml
       
