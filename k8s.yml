@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: stage-react-redux
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: stage-react-redux
+  name: stage-react-redux
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: stage-react-redux
+  replicas: 20
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: stage-react-redux
+    spec:
+      containers:
+      - image: docker.io/sharefm/stage-react-redux:latest
+        imagePullPolicy: Always
+        name: stage-react-redux
+        ports:
+        - containerPort: 4100
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: stage-react-redux
+  name: stage-react-redux
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: stage-react-redux
+  
