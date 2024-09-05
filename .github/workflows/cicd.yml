@@ -56,8 +56,8 @@ jobs:
       name: ls
       run: ls -lat ../../../
     -
-      name: pwd
-      run: echo $PWD
+      name: ls 2
+      run: ls -lat /home/runner/
     
     -
       name: Build and push
