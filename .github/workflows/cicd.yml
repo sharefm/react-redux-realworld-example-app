@@ -43,8 +43,11 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
+      name: ls
+      run: ls
+    -
       name: pwd
-      run: ls $PWD
+      run: echo $PWD
     
     -
       name: Build and push
