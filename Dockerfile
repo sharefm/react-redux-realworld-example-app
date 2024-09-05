@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:latest
 
 RUN mkdir app
 
@@ -6,7 +6,7 @@ COPY . app/
 
 WORKDIR app/
 
-RUN npm install cross-env
+#RUN npm install cross-env
 
 #RUN npm install 
 
