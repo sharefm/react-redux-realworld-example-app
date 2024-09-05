@@ -2,7 +2,7 @@ FROM node:latest
 
 #RUN mkdir app
 
-#COPY . app/
+COPY . .   
 
 #WORKDIR app/
 
