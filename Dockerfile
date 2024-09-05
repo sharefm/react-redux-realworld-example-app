@@ -1,10 +1,14 @@
 FROM node:slim
 
-RUN mkdir app
+#RUN mkdir app
 
-COPY . app/
+COPY . .   
 
-WORKDIR app/
+#WORKDIR app/
+
+RUN npm install cross-env
+
+#RUN npm install 
 
 EXPOSE 4100
 
