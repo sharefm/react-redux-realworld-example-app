@@ -31,6 +31,16 @@ jobs:
 
 
         
+  Test-code:
+    runs-on: ubuntu-latest
+    needs: docker-build-push
+    steps:          
+    -
+      name: test-step
+      run: echo "test not ready"        
+
+
+        
   pull-deploy-image:
     runs-on: ubuntu-latest
     needs: docker-build-push
