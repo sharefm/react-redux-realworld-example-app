@@ -44,7 +44,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
       name: ls
-      run: ls
+      run: ls -lat
     -
       name: pwd
       run: echo $PWD
