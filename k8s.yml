@@ -13,7 +13,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: main-react-redux
-  replicas: 20
+  replicas: 5
   template:
     metadata:
       labels:
