@@ -33,7 +33,7 @@ metadata:
   name: main-react-redux
 spec:
   ports:
-    - port: 4100
+    - port: 80
       targetPort: 4100
       protocol: TCP
   type: LoadBalancer
